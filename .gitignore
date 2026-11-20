@@ -1,34 +1,68 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Terraform and Infrastructure Manager
+# (.terraform.lock.hcl is intentionally NOT ignored: commit it)
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+.terraformrc
+terraform.rc
+
+# Pulumi
+Pulumi.*.yaml
+!Pulumi.yaml
+.pulumi/
+
+# Go
+bin/
 *.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
 *.test
-
-# Code coverage profiles and other test artifacts
 *.out
-coverage.html
-coverage.txt
-coverage.xml
-*.coverprofile
-profile.cov
+# remove the next line if vendoring on purpose
+vendor/
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# CloudFormation
+*.parameters.json
+!*.parameters.json.example
+packaged-template*.yaml
 
-# Go workspace file
-go.work
-go.work.sum
+# Bicep compiled outputs
+*.bicep.json
 
-# env file
+# Credentials and secrets (critical)
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials
+credentials.json
+*-sa-key.json
+service-account*.json
+.aws/
+.azure/
+.config/gcloud/
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# Diagram tooling caches
+.drawio.bkp
+*.drawio.dtmp
